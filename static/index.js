@@ -51,20 +51,20 @@ document.getElementById("submit-btn").addEventListener("click",function(){
     }
     showSuccess("wait for the result")
     async function send(student, skills) {
-    try {
-        const res = await fetch('/user_info', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                user: student,
-                skills: skills
-            })
-        });
-        const data = await res.json();
-        const resultDiv = document.querySelector(".result");
-        resultDiv.innerHTML = `
+        try {
+            const res = await fetch('/user_info', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    user: student,
+                    skills: skills
+                })
+            });
+            const data = await res.json();
+            const resultDiv = document.querySelector(".result");
+            resultDiv.innerHTML = `
             <h2>Your Career Path Prediction</h2>
             <div class="prediction-result">
                 <p><strong>Recommended Career Path:</strong> ${data["path"]}</p>
