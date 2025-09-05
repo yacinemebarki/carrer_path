@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container > h1 {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.student-info {
+    padding: 40px;
+}
+
+.school-info, .skills {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #e2e8f0;
+}
+
+.school-info h1, .skills h1 {
+    color: #1e293b;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.school-info h1::after, .skills h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #4f46e5, #7c3aed);
+    border-radius: 2px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+    text-transform: capitalize;
+    font-size: 0.95rem;
+}
+
+input[type="number"], 
+input[type="text"], 
+select {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+input[type="number"]:focus, 
+input[type="text"]:focus, 
+select:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    transform: translateY(-2px);
+}
+
+input[type="number"]:hover, 
+input[type="text"]:hover, 
+select:hover {
+    border-color: #6b7280;
+}
+
+select {
+    cursor: pointer;
+}
+
+#submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+#submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+}
+
+#submit-btn:active {
+    transform: translateY(0);
+}
+
+.error-message, .success-message {
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+}
+
+.error-message {
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: 2px solid #fca5a5;
+}
+
+.success-message {
+    background-color: #dcfce7;
+    color: #16a34a;
+    border: 2px solid #86efac;
+}
+
+.result, .cources {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f1f5f9;
+    border-radius: 12px;
+    border-left: 5px solid #4f46e5;
+    min-height: 50px;
+    display: none;
+}
+
+.result.show, .cources.show {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container > h1 {
+        font-size: 2rem;
+        padding: 20px;
+    }
+    
+    .student-info {
+        padding: 20px;
+    }
+    
+    .school-info, .skills {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .school-info h1, .skills h1 {
+        font-size: 1.5rem;
+    }
+    
+    input[type="number"], 
+    input[type="text"], 
+    select {
+        padding: 10px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container > h1 {
+        font-size: 1.8rem;
+    }
+    
+    .school-info h1, .skills h1 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #3730a3, #6b21a8);
+}
+/* Additional styles for career path results */
+.result h2 {
+    color: #1e293b;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.prediction-result {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.prediction-result p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #374151;
+}
+
+.prediction-result p:last-child {
+    margin-bottom: 0;
+}
+
+.prediction-result strong {
+    color: #1e293b;
+    font-weight: 700;
+    display: inline-block;
+    min-width: 180px;
+}
+
+/* Career path specific styling */
+.career-path {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 600;
+    margin-left: 10px;
+    text-transform: capitalize;
+    box-shadow: 0 2px 4px rgba(79, 70, 229, 0.3);
+}
+
+/* Confidence level styling with colors */
+.confidence-high {
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.confidence-medium {
+    color: #ea580c;
+    font-weight: 700;
+}
+
+.confidence-low {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+/* Progress bar for confidence */
+.confidence-bar {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.confidence-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.8s ease-in-out;
+}
+
+.confidence-fill.high {
+    background: linear-gradient(to right, #16a34a, #22c55e);
+}
+
+.confidence-fill.medium {
+    background: linear-gradient(to right, #ea580c, #f97316);
+}
+
+.confidence-fill.low {
+    background: linear-gradient(to right, #dc2626, #ef4444);
+}
+
+/* Result animation enhancement */
+.result.show {
+    animation: slideInResult 0.6s ease-out;
+}
+
+@keyframes slideInResult {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive adjustments for results */
+@media (max-width: 768px) {
+    .result h2 {
+        font-size: 1.4rem;
+    }
+    
+    .prediction-result {
+        padding: 20px;
+    }
+    
+    .prediction-result p {
+        font-size: 1rem;
+    }
+    
+    .prediction-result strong {
+        min-width: 150px;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .career-path {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .result h2 {
+        font-size: 1.3rem;
+    }
+    
+    .prediction-result {
+        padding: 15px;
+    }
+}
