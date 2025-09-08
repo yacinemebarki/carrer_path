@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request,jsonify
 import pandas as pd   
 import numpy as np
-
+from youtubesearchpython import VideosSearch
 
 import joblib
 model=joblib.load('my_model.pkl')
@@ -26,10 +26,29 @@ def answer():
     print(result)
     path=pip.predict([skills])
     print(path)
+    search_query = f"{path[0]} course"
+    video=VideosSearch(search_query,limit=5)
+    course=video.result()
+    if course.get('result') and len(course['result']) > 0:
+        print(course['result'][0]['link'])
+    else:
+        print("No results found for:", path[0])
+    courses=[]
+    for i in course['result']:
+        courses.append({
+            'title':i['title'],
+            'duration':i['duration'],
+            'link':i['link']
+        })
+    print(courses)        
+
     return jsonify({
-        "prob":result[0],
-        "path":path
+        "prob":float(result[0]),
+        "path":path[0],
+        "course":courses
     })
+if __name__=='__main__':
+    app.run(debug=True)
 
     
     

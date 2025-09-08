@@ -393,3 +393,194 @@ select {
         padding: 15px;
     }
 }
+/* Courses table styling */
+.courses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.courses-table thead {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+}
+
+.courses-table th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.courses-table td {
+    padding: 18px 15px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #374151;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.courses-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.courses-table tbody tr:hover {
+    background-color: #f8fafc;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.courses-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Course link styling */
+.course-link {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 2px solid #4f46e5;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.course-link:hover {
+    background: #4f46e5;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(79, 70, 229, 0.2);
+}
+
+/* Course title styling */
+.course-title {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* Duration badge */
+.course-duration {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    min-width: 60px;
+}
+
+/* Courses section header */
+.cources h2 {
+    color: #1e293b;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Empty state for courses */
+.no-courses {
+    text-align: center;
+    color: #6b7280;
+    font-style: italic;
+    padding: 40px;
+    background: #f9fafb;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+/* Responsive design for courses table */
+@media (max-width: 768px) {
+    .courses-table {
+        font-size: 0.9rem;
+    }
+    
+    .courses-table th,
+    .courses-table td {
+        padding: 12px 10px;
+    }
+    
+    .course-link {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .course-duration {
+        font-size: 0.8rem;
+        padding: 3px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .courses-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .courses-table thead,
+    .courses-table tbody,
+    .courses-table th,
+    .courses-table td,
+    .courses-table tr {
+        display: block;
+    }
+    
+    .courses-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .courses-table tr {
+        border: 1px solid #e2e8f0;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        padding: 10px;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    .courses-table td {
+        border: none;
+        border-bottom: 1px solid #e2e8f0;
+        position: relative;
+        padding-left: 50%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        white-space: normal;
+    }
+    
+    .courses-table td:before {
+        content: attr(data-label) ": ";
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: 600;
+        color: #374151;
+    }
+    
+    .courses-table td:last-child {
+        border-bottom: none;
+    }
+}
