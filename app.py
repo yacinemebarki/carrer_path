@@ -2,6 +2,7 @@ from flask import Flask,render_template,request,jsonify
 import pandas as pd   
 import numpy as np
 from youtubesearchpython import VideosSearch
+import os
 
 import joblib
 model=joblib.load('my_model.pkl')
@@ -47,8 +48,11 @@ def answer():
         "path":path[0],
         "course":courses
     })
-if __name__=='__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
 
     
     
