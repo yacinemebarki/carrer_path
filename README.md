@@ -99,15 +99,19 @@ This project aims to solve that problem by providing **data-driven career recomm
           "path": path[0],
           "course": course
       })
-### 🔮 Future Work  
+  
+### 🔮 Future Work
+
 - **Expand dataset**: Include more diverse student backgrounds (different universities, countries, and skills).  
 - **Improve accuracy**: Experiment with advanced ML models (e.g., XGBoost, Neural Networks) to boost prediction performance.  
 - **Dynamic learning**: Continuously update recommendations as students improve their skills over time.  
 - **Personalized content**: Suggest not only YouTube videos but also articles, courses (Coursera, Udemy), and project ideas.  
 - **Interactive dashboard**: Build a modern frontend with frameworks like React or Vue for better user experience.  
 - **Deployment scalability**: Move from Render to cloud platforms (AWS, GCP, Azure) for higher traffic and real-time inference.  
-- **Gamification**: Add badges, progress tracking, and learning goals to keep students motivated.  
-### ✅ Conclusion  
+- **Gamification**: Add badges, progress tracking, and learning goals to keep students motivated.
+    
+### ✅ Conclusion 
+
 This project provides a practical solution for Computer Science students struggling to choose their career path after graduation.  
 By combining machine learning with a simple web interface, it predicts the most suitable field for each student and suggests learning resources to improve their skills.  
 Although still in its early stage, the system demonstrates how data-driven guidance can support students in making informed career decisions and lays the foundation for future improvements.  
